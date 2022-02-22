@@ -1,0 +1,100 @@
+:root{
+    --clr-body: #111827;
+
+    --clr-intro-sec: #3A69D2;
+
+    --clr-services-sec: #1F2937;
+    
+    --clr-service-btn: #D1D4F4;
+
+    --clr-send-btn: #3A69D2;
+
+    --clr-head-txt: #ffff;
+
+    --clr-main-txt-notes: #F5F5F5;
+
+    --clr-sub-txt: #D5D4D8;
+
+    --clr-divider-line: #C3C6DB;
+
+    --clr-btn-txt: #4A4E74;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+div{
+    font-size: 40px;
+}
+
+button{
+    padding: 10px 10px;
+    color: var(--clr-btn-txt);
+    border: none;
+    background-color: var(--clr-service-btn);
+    cursor: pointer;
+}
+
+.intro-section{
+    background-color: var(--clr-intro-sec);
+    color: var(--clr-main-txt-notes);
+    height: 120px;
+    padding: 1em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-section{
+    background-color: var(--clr-services-sec);
+    height: 500px;
+    padding: 1em;
+}
+
+.items{
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.invoice-body-1{
+    color: var(--clr-sub-txt);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#small{
+    font-size: 15px;
+}
+
+.invoice-body-2{
+    color: var(--clr-sub-txt);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid var(--clr-divider-line) ;
+}
+
+.btn-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-btn{
+    background-color: var(--clr-send-btn);
+    width: 200px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-img{
+    padding: 0 0.5em;
+}
