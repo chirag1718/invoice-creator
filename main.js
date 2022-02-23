@@ -1,26 +1,60 @@
-const washCar = document.getElementById("wash-car")
+const washCar = document.getElementById("wash-car");
+const mowLawn = document.getElementById("mow-lawn");
+const pullWeeds = document.getElementById("pull-weeds");
+const invoiceNotes = document.getElementById("invoice-notes");
+let invoiceTotal = document.getElementById("invoice-total");
+let remove = document.getElementById("remove");
+const reset = document.getElementsByClassName("btn")
 
-const mowLawn = document.getElementById("mow-lawn")
+let services = [
+  { car: "Wash Car", price: 10 },
+  { lawn: "Mow Lawn", price: 20 },
+  { pull: "Pull Weeds", price: 30 },
+];
 
-const pullWeeds = document.getElementById("pull-weeds")
+let selectedServices = [];
+let unselectedServices = [];
 
-const invoiceNotes = document.getElementById("invoice-notes")
+//car wash
+washCar.addEventListener("click", function () {
+  document.getElementById("wash-task").innerHTML = services[0].car;
+  document.getElementById("wash-rate").innerHTML = `$ ${services[0].price}`;
+  document.getElementById("invoice-notes").innerHTML = "We accept cash, credit card, or paypal"
+  selectedServices.push(services[0].price);
+  unselectedServices.pop(services[0].price)
+  amount();
+}, {once : true} );
 
-// Car wash
-washCar.addEventListener("click", function(){
-    document.getElementById("wash-el").innerHTML = "Wash Car"
-    document.getElementById("wash-rate").innerHTML = "$10"
+//lawn mowing
+mowLawn.addEventListener("click", function () {
+  document.getElementById("mow-task").innerHTML = services[1].lawn;
+  document.getElementById("mow-rate").innerHTML = `$ ${ services[1].price}`;
+  document.getElementById("invoice-notes").innerHTML = "We accept cash, credit card, or paypal"
+  selectedServices.push(services[1].price);
+  unselectedServices.pop(services[1].price)
+  amount();
+}, {once : true} );
+
+//pulling weeds
+pullWeeds.addEventListener("click", function () {
+  document.getElementById("pull-task").innerHTML = services[2].pull;
+  document.getElementById("pull-rate").innerHTML = `$ ${services[2].price}`;
+  document.getElementById("invoice-notes").innerHTML = "We accept cash, credit card, or paypal"
+  selectedServices.push(services[2].price);
+  unselectedServices.pop(services[2].price)
+  amount();
+}, {once : true} );
+
+reset.addEventListener("click", function(){
+    document.getElementById("wash-task").innerHTML = "";
+    document.getElementById("wash-rate").innerHTML = "";
 })
 
-// Lawn mowing
-mowLawn.addEventListener("click", function(){
-    document.getElementById("mow-el").innerHTML = "Mow Lawn"
-    document.getElementById("mow-rate").innerHTML = "$20"
-})
-
-// Pulling weeds
-pullWeeds.addEventListener("click", function(){
-    document.getElementById("pull-el").innerHTML = "Pull Weeds"
-    document.getElementById("pull-rate").innerHTML = "$30"
-})
-
+function amount() {
+  let sum = 0;
+  for( let i = 0; i<selectedServices.length; i++){
+      sum += selectedServices[i]
+  }
+  invoiceTotal.innerHTML = `$ ${sum}`;
+  
+}

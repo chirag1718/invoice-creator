@@ -18,83 +18,129 @@
     --clr-divider-line: #C3C6DB;
 
     --clr-btn-txt: #4A4E74;
+
+    --bs-shadow: 3px 6px 6px -3px black;
+
+    --fs-small-txt: 15px;
+
+    --fs-main-txt: 30px;
 }
+
 
 body{
     padding: 0;
-    margin: 0;
+    margin: 1em;
+    background-color: #d1d5db;
 }
 
-div{
-    font-size: 40px;
+h1,
+p{
+    margin: 0.5em 0;
 }
 
 button{
-    padding: 10px 10px;
-    color: var(--clr-btn-txt);
-    border: none;
-    background-color: var(--clr-service-btn);
     cursor: pointer;
 }
 
-.intro-section{
-    background-color: var(--clr-intro-sec);
-    color: var(--clr-main-txt-notes);
-    height: 120px;
-    padding: 1em;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.small{
+    font-size: var(--fs-small-txt);
+    color: var(--clr-sub-txt);
 }
 
-.services-section{
-    background-color: var(--clr-services-sec);
-    height: 500px;
+.big{
+    font-size: var(--fs-main-txt);
+    color: var(--clr-main-txt-notes);
+}
+
+.main-body{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: var(--clr-body);
+    height: 700px;
+    width: 500px;
+    border-radius: 1em;
+    /* margin: 0 5em; */
     padding: 1em;
+    color: white;
+    box-shadow: var(--bs-shadow);
+}
+
+.introduction{
+    background-color: var(--clr-intro-sec);
+    text-align: center;
+    border-radius: 1em;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .items{
+    height: 100px;
+    /* margin: 1em 0; */
     display: flex;
-    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-btn{
+    background-color: var(--clr-service-btn);
+    color: var(--clr-btn-txt);
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.invoice-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: justify;
+}
+
+.invoice-items{
+    display: flex;
+    gap: 0.5em;
     justify-content: center;
     align-items: center;
-    
 }
 
-.invoice-body-1{
-    color: var(--clr-sub-txt);
+.invoice-content{
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    /* align-items: center; */
+    border-top: 2px solid var(--clr-divider-line);
+    text-align: justify;
+    margin-bottom: 0.5em;
 }
 
-#small{
-    font-size: 15px;
+#total{
+    text-align: right;
 }
 
-.invoice-body-2{
-    color: var(--clr-sub-txt);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 2px solid var(--clr-divider-line) ;
-}
-
-.btn-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#invoice-total{
+    text-align: right;
+    font-size: var(--fs-main-txt);
 }
 
 .send-btn{
-    background-color: var(--clr-send-btn);
-    width: 200px;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1em 0;
 }
 
-.send-img{
-    padding: 0 0.5em;
+.btn{
+    width: 300px;
+    background-color: var(--clr-send-btn);
+    color: var(--clr-sub-txt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    font-size: var(--clr-head-txt);
+    padding: 0.3em;
+    border: none;
+    border-radius: 1em;
 }
